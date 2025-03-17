@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PPD Support - Your Mental Health Matters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            
+            <a class="navbar-brand" href="#">MomsMatter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quiz">Assessment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mood">Mood Tracker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journal">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#consultation">Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
+        <source src="background-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video> -->
+
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1>Welcome to MomsMatter</h1>
+            <p>You are not alone—your feelings matter.<br> Take a step towards understanding and healing with our Postpartum Depression Support and Wellness Platform</p>
+            
+            <a href="#quiz" class="btn btn-primary">Take Assessment</a>
+        </div>
+    </section>
+
+    <section id="quiz" class="assessment">
+        <div class="container">
+            <h2>Postpartum Depression(PPD) Risk Assessment</h2>
+            <form id="quizForm">
+                <div class="mb-3">
+                    <label>How is your sleep quality lately?</label>
+                    <select class="form-control" name="sleep">
+                        <option value="0">Good</option>
+                        <option value="1">Moderate</option>
+                        <option value="2">Poor</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>How often do you feel anxious?</label>
+                    <select class="form-control" name="anxiety">
+                        <option value="0">Rarely</option>
+                        <option value="1">Sometimes</option>
+                        <option value="2">Often</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>How would you describe your mood swings?</label>
+                    <select class="form-control" name="mood">
+                        <option value="0">Minimal</option>
+                        <option value="1">Moderate</option>
+                        <option value="2">Severe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Loss of appetite or overeating?</label>
+                    <select class="form-control" name="anxiety">
+                        <option value="0">Eating too much</option>
+                        <option value="1">Eating normal</option>
+                        <option value="2">Feeling less hungry</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Isolating yourself or avoiding social interaction?</label>
+                    <select class="form-control" name="anxiety">
+                        <option value="0">Yes</option>
+                        <option value="1">Sometimes</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Thoughts of hurting yourself(suicidal thoughts)?
+                    </label>
+                    <select class="form-control" name="anxiety">
+                        <option value="0">Rarely</option>
+                        <option value="1">Sometimes</option>
+                        <option value="2">Often</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Check Risk</button>
+            </form>
+            <div id="quizResult" class="mt-4"></div>
+        </div>
+    </section>
+
+    <section id="mood" class="mood-tracker">
+        <div class="container">
+            <h2>Daily Mood Tracker</h2>
+            <div class="mood-selector">
+                <button class="btn mood-btn" data-mood="Happy">😊 Happy</button>
+                <button class="btn mood-btn" data-mood="Sad">😢 Sad</button>
+                <button class="btn mood-btn" data-mood="Anxious">😰 Anxious</button>
+                <button class="btn mood-btn" data-mood="Tired">😴 Tired</button>
+                <button class="btn mood-btn" data-mood="Neutral">😐 Neutral</button>
+            </div>
+            <canvas id="moodChart" class="mt-4"></canvas>
+        </div>
+    </section>
+
+    <section id="journal" class="journal">
+        <div class="container">
+            
+            <h2>Write, reflect, heal—your safe space awaits. ✨</h2>
+            <h3 style="color:lightpink">Your Daily Journal</h3>
+            <form id="journalForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Title" id="journalTitle" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Write your thoughts..." id="journalContent" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Entry</button>
+            </form>
+            <div id="journalEntries" class="mt-4"></div>
+        </div>
+    </section>
+
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Helpful Resources to Cure</h2>
+            <div id="articlesList" class="row"></div>
+            <ul>
+                <li><a href="https://www.huffpost.com/entry/books-postpartum-mental-health-for-new-parents_l_60ad2eb1e4b0a25683187e00">Books</a></li>
+                <li><a href="https://youtu.be/K_3NlTtybIA?si=9lbynLdmpwFL4Y9V">Videos</a></li>
+                <li><a href="https://www.ppd.com/our-solutions/clinical/phase-ii-iv-clinical-trial-management/regulatory-affairs/regulatory-consulting-and-strategic-intelligence-services/">Consultants</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <h2>Book a Consultation</h2>
+            <form id="consultationForm">
+                <div class="mb-3">
+                    <label>Enter your name</label>
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <label>Enter your Email id</label>
+                    <input type="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="mb-3">
+                    <label>Enter the date of appointment</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h4>Feel Free to Express</h4>
+            <h5>You Matter the Most</h5>
+            <p>© 2025 PPD Support. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+          <source src="background-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
